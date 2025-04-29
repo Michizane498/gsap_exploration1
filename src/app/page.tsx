@@ -1,6 +1,22 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import {ReactLenis} from "@studio-freight/react-lenis"
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
+  const stickyRef = useRef(null);
+  const handContainerRef = useRef(null);
+  const handRef = useRef(null);
+  const handImageRef = useRef(null);
+  const introRef = useRef(null);
+  const h1ElementRef = useRef(null);
+  const introCopyRef = useRef(null);
+  const websiteContentRef = useRef(null);
+
   return (
     <>
       <div className="container">

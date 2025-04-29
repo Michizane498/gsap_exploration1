@@ -115,7 +115,7 @@ img {
   align-items: flex-start;
   transform-origin: center center;
   transform-style: preserve-3d;
-  /* will-change: transform; */
+  will-change: transform;
   z-index: 2;
 }
 
@@ -125,7 +125,7 @@ img {
   height: 52.75%;
   border-color: rgb(238, 238, 238);
   border-radius: 1000px;
-  /* will-change: transform; */
+  will-change: transform;
   overflow: hidden;
   opacity: 1;
 }
