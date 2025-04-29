@@ -25,3 +25,33 @@ body {
     text-wrap: balance;
   }
 } */
+/* @font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Medium.woff2') format('woff2'),
+      url('../fonts/NeueMontreal-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+$font-neue-montreal: 'Neue Montreal'; */
+@font-face {
+  font-family: 'NeueMontreal-Medium';
+  src: url('./fonts/NeueMontreal-Medium.woff2') format('woff2'),
+       url('./fonts/NeueMontreal-Medium.woff') format('woff');
+  font-weight: 500; /* Normal */
+  font-style: normal;
+  font-display: swap; /* Optional: improves perceived performance */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  width: 100vw;
+  height: 1000vh;
+  font-family: 'NeueMontreal-Medium';
+}
