@@ -61,6 +61,9 @@ export default function Home() {
 
           // Handle text cycle updates
           const newCycle = Math.floor((totalRotation + 90) / 360);
+          if (progress <= 1 / 8) {
+            gsap.set(scrolltag.current, { opacity: 0 });
+          }
           if (
             newCycle !== currentCycle &&
             newCycle >= 0 &&
@@ -95,9 +98,6 @@ export default function Home() {
               });
               imageRevealed = false;
             }
-          }
-          if (progress <= 1 / 8) {
-            gsap.set(scrolltag.current, { opacity: 0 });
           }
 
           // Handle height and opacity transitions
