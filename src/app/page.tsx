@@ -168,9 +168,9 @@ export default function Home() {
             <div ref={introCopyRef}>
               <p style={{ opacity: 0, transform: "translateX(20px)" }}>
                 It is empathetic, anticipating the user&apos;s unspoken need,
-                the teammate&apos;s next challenge, the future&apos;s
-                unasked question. I build not just for today&apos;s merge, but
-                for the legacy of what could be.
+                the teammate&apos;s next challenge, the future&apos;s unasked
+                question. I build not just for today&apos;s merge, but for the
+                legacy of what could be.
               </p>
               <p style={{ opacity: 0, transform: "translateX(20px)" }}>
                 Because technology is not tools, it is the bridge between what

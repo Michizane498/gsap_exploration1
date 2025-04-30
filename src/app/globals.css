@@ -25,14 +25,41 @@ body {
     text-wrap: balance;
   }
 } */
-/* @font-face {
-  font-family: 'Neue Montreal';
-  src: url('../fonts/NeueMontreal-Medium.woff2') format('woff2'),
-      url('../fonts/NeueMontreal-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
+:root {
+  /* Existing variables */
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* New responsive variables */
+  --h1-size: 22px;
+  --content-h1-size: 10vw;
+  --intro-width: 22.5%;
+  --intro-left: 25%;
+  --hand-container-size: 800px;
+  --left: 8%;
+  --width: 40%;
 }
-$font-neue-montreal: 'Neue Montreal'; */
+
+@media (min-width: 640px) {
+  :root {
+    --h1-size: 26px;
+    --content-h1-size: 8vw;
+    --left: 18%;
+    --width: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --h1-size: 30px;
+    --hand-container-size: 900px;
+    --intro-width: 30%;
+    --intro-left: 20%;
+    --left: 25%;
+    --width: 22.5%;
+  }
+}
+
 @font-face {
   font-family: "NeueMontreal-Medium";
   src: url("./fonts/NeueMontreal-Medium.woff2") format("woff2"),
@@ -64,7 +91,7 @@ section {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: var(--h1-size);
   font-weight: 500;
   letter-spacing: -0.01em;
 }
@@ -146,8 +173,8 @@ img {
 .intro {
   position: absolute;
   top: calc(50% - 20px);
-  left: 25%;
-  width: 22.5%;
+  left: var(--left);
+  width: var(--width);
 }
 
 .intro p {
