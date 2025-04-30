@@ -15,7 +15,7 @@
   --content-h1-size: 10vw;
   --intro-width: 90%;
   --intro-left: 5%;
-  --hand-container-size: 400px;
+  --hand-container-size: 320px;
   --hand-width: 8%;
   --hand-height: 30%; /* Increased from 24% for small devices */
 }
