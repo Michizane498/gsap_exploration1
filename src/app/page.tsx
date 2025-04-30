@@ -158,7 +158,7 @@ export default function Home() {
         <section className="sticky" ref={stickyRef}>
           <div className="hand-container" ref={handContainerRef}>
             <div className="hand" ref={handRef}>
-              <img src="/usage.jpg" alt="Hand" ref={handImageRef} />
+              <img src="/usage.png" alt="Hand" ref={handImageRef} />
             </div>
           </div>
           <div className="intro" ref={introRef}>
