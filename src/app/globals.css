@@ -103,6 +103,7 @@ img {
   background-color: #161616;
 }
 
+
 .hand-container {
   position: absolute;
   top: 50%;
@@ -117,12 +118,14 @@ img {
   transform-style: preserve-3d;
   will-change: transform;
   z-index: 2;
+  
 }
 
 .hand {
   position: absolute;
   width: 5.5%;
   height: 52.75%;
+  background-color: #fff;
   border-color: rgb(238, 238, 238);
   border-radius: 1000px;
   will-change: transform;
