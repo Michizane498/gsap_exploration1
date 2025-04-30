@@ -54,7 +54,7 @@ export default function Home() {
 
           // Handle rotation animation
           const rotationProgress = Math.min((progress * 8) / 5, 1);
-          const totalRotation = rotationProgress * 1800 - 90;
+          const totalRotation = rotationProgress * 1710;
           const rotationInCycle = ((totalRotation + 90) % 360) - 90;
           gsap.set(handContainerRef.current, { rotation: rotationInCycle });
 
@@ -68,7 +68,7 @@ export default function Home() {
             currentCycle = newCycle;
             updateHeaderText();
 
-            // Handle image and copy reveal for "meet me" section (cycle 3)
+            // Handle image and copy reveal for "meet me" section
             if (newCycle === 3 && !imageRevealed) {
               gsap.to(handImageRef.current, {
                 opacity: 1,
@@ -157,9 +157,7 @@ export default function Home() {
               <img
                 src="/usage.jpg"
                 alt="Hand"
-                ref={handImageRef}
-                style={{ opacity: 0 }} // Initial state
-              />
+                ref={handImageRef}              />
             </div>
           </div>
           <div className="intro" ref={introRef}>
