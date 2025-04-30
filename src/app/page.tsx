@@ -171,11 +171,12 @@ export default function Home() {
                 It is empathetic, anticipating the user's unspoken need, the
                 teammate's next challenge, the future's unasked question. I
                 build not just for today's merge, but for the legacy of what
-                could be. Because technology is not tools, it is the bridge
-                between what is and what we dare to imagine.
+                could be.
               </p>
               <p style={{ opacity: 0, transform: "translateX(20px)" }}>
-                And so I debug, design, and dream, one line at a time.
+                Because technology is not tools, it is the bridge between what
+                is and what we dare to imagine. And so I debug, design, and
+                dream, one line at a time.
               </p>
             </div>
           </div>
