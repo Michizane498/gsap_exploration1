@@ -1,11 +1,14 @@
-:root {
-  /* Color Variables */
-  --background: #ffffff;
-  --foreground: #171717;
-  --text-secondary: #555555;
-  --accent-color: #6e6e6e;
-  --dark-bg: #161616;
+/* ===== Base Styles ===== */
+@font-face {
+  font-family: "NeueMontreal-Medium";
+  src: url("./fonts/NeueMontreal-Medium.woff2") format("woff2"),
+       url("./fonts/NeueMontreal-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
+:root {
   /* Layout Variables */
   --h1-size: 14px;
   --h1-margin-top: 10px;
@@ -14,13 +17,7 @@
   --intro-left: 5%;
   --hand-container-size: 300px;
   --hand-width: 8%;
-  --hand-height: 24%;
-  --text-translate-x: 20px;
-
-  /* Z-index */
-  --z-index-base: 1;
-  --z-index-content: 10;
-  --z-index-hand: 20;
+  --hand-height: 30%; /* Increased from 24% for small devices */
 }
 
 @media (min-width: 640px) {
@@ -47,25 +44,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --text-secondary: #aaaaaa;
-    --accent-color: #888888;
-  }
-}
-
-/* Base Styles */
-@font-face {
-  font-family: "NeueMontreal-Medium";
-  src: url("./fonts/NeueMontreal-Medium.woff2") format("woff2"),
-       url("./fonts/NeueMontreal-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* ===== Global Styles ===== */
 * {
   margin: 0;
   padding: 0;
@@ -79,8 +58,8 @@ body {
   width: 100vw;
   min-height: 100vh;
   font-family: "NeueMontreal-Medium", -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--foreground);
-  background: var(--background);
+  color: #fff;
+  background: #ffffff;
   overflow-x: hidden;
 }
 
@@ -90,7 +69,7 @@ section {
   position: relative;
 }
 
-/* Typography */
+/* ===== Typography ===== */
 h1 {
   margin-top: var(--h1-margin-top);
   font-size: var(--h1-size);
@@ -100,31 +79,31 @@ h1 {
 }
 
 h1 span {
-  color: var(--accent-color);
+  color: #6e6e6e;
 }
 
 p {
   font-size: 16px;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #555555;
   text-align: justify;
   line-height: 130%;
 }
 
-/* Components */
+/* ===== Components ===== */
 .about {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background);
+  background-color: #ffffff;
 }
 
 .about p {
-  color: var(--foreground);
+  color: #161616;
 }
 
 .sticky {
-  background-color: var(--dark-bg);
+  background-color: #161616;
 }
 
 .hand-container {
@@ -140,14 +119,14 @@ p {
   transform-origin: center center;
   transform-style: preserve-3d;
   will-change: transform;
-  z-index: var(--z-index-hand);
+  z-index: 2;
 }
 
 .hand {
   position: absolute;
   width: var(--hand-width);
   height: var(--hand-height);
-  background-color: var(--foreground);
+  background-color: #ffffff;
   border-radius: 1000px;
   will-change: transform;
   overflow: hidden;
@@ -161,8 +140,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: var(--text-secondary);
-  z-index: var(--z-index-content);
+  color: #555555;
 }
 
 .intro {
@@ -171,13 +149,12 @@ p {
   left: var(--intro-left);
   width: var(--intro-width);
   max-width: 600px;
-  z-index: var(--z-index-content);
 }
 
 .intro p {
   position: relative;
   margin-top: 0.75em;
-  transform: translateX(var(--text-translate-x));
+  transform: translateX(20px);
   opacity: 0;
 }
 
@@ -188,7 +165,6 @@ p {
   transform: translate(-50%, -50%);
   text-align: center;
   opacity: 0;
-  z-index: var(--z-index-content);
 }
 
 .website-content h1 {
@@ -202,13 +178,4 @@ img {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 }
