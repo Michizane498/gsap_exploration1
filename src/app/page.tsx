@@ -13,6 +13,7 @@ export default function Home() {
   const stickyRef = useRef<HTMLDivElement>(null);
   const handContainerRef = useRef<HTMLDivElement>(null);
   const handRef = useRef<HTMLDivElement>(null);
+  const scrolltag = useRef<HTMLSpanElement>(null);
   const handImageRef = useRef<HTMLImageElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const h1ElementRef = useRef<HTMLHeadingElement>(null);
@@ -95,6 +96,9 @@ export default function Home() {
               imageRevealed = false;
             }
           }
+          if (progress <= 1 / 8) {
+            gsap.set(scrolltag.current, { opacity: 0 });
+          }
 
           // Handle height and opacity transitions
           if (progress <= 6 / 8) {
@@ -154,10 +158,7 @@ export default function Home() {
         <section className="sticky" ref={stickyRef}>
           <div className="hand-container" ref={handContainerRef}>
             <div className="hand" ref={handRef}>
-              <img
-                src="/usage.jpg"
-                alt="Hand"
-                ref={handImageRef}              />
+              <img src="/usage.jpg" alt="Hand" ref={handImageRef} />
             </div>
           </div>
           <div className="intro" ref={introRef}>
@@ -166,10 +167,10 @@ export default function Home() {
             </h1>
             <div ref={introCopyRef}>
               <p style={{ opacity: 0, transform: "translateX(20px)" }}>
-                It is empathetic, anticipating the user`&apos;`s unspoken need, the
-                teammate`&apos;`s next challenge, the future`&apos;`s unasked question. I
-                build not just for today`&apos;`s merge, but for the legacy of what
-                could be.
+                It is empathetic, anticipating the user&apos;s unspoken need,
+                the teammate&apos;s next challenge, the future&apos;s
+                unasked question. I build not just for today&apos;s merge, but
+                for the legacy of what could be.
               </p>
               <p style={{ opacity: 0, transform: "translateX(20px)" }}>
                 Because technology is not tools, it is the bridge between what
@@ -178,6 +179,9 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <span className="scrolltag" ref={scrolltag}>
+            Scroll
+          </span>
           <div className="website-content" ref={websiteContentRef}>
             <h1>Welcome</h1>
           </div>

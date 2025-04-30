@@ -133,6 +133,16 @@ img {
   opacity: 1;
 }
 
+.scrolltag {
+  opacity: 1;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #555555;
+}
+
 .intro {
   position: absolute;
   top: calc(50% - 20px);
