@@ -22,7 +22,7 @@ export default function Home() {
 
   const introHeaders = [
     "<span>time to </span>be brave",
-    "<span>time to </span>be playful",
+    "<span>time to </span>be playfull",
     "<span>time to </span>design the future",
     "<span>time to </span>meet me",
     "<span>time to </span>see my projects",
@@ -187,7 +187,7 @@ export default function Home() {
           </div>
         </section>
         <section className="about">
-          <p>Some content here</p>
+          <p>(WIP) Some content here</p>
         </section>
       </div>
     </ReactLenis>
