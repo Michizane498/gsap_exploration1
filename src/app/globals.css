@@ -126,7 +126,7 @@ img {
   width: 5.5%;
   height: 52.75%;
   background-color: #fff;
-  border-color: rgb(238, 238, 238);
+  /* border-color: rgb(238, 238, 238); */
   border-radius: 1000px;
   will-change: transform;
   overflow: hidden;

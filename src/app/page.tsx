@@ -67,12 +67,12 @@ export default function Home() {
           ) {
             currentCycle = newCycle;
             updateHeaderText();
-            
+
             // Handle image and copy reveal for "meet me" section (cycle 3)
             if (newCycle === 3 && !imageRevealed) {
-              gsap.to(handImageRef.current, { 
-                opacity: 1, 
-                duration: 0.3 
+              gsap.to(handImageRef.current, {
+                opacity: 1,
+                duration: 0.3,
               });
               gsap.to(introCopyRef.current?.querySelectorAll("p") || [], {
                 x: 0,
@@ -82,9 +82,9 @@ export default function Home() {
               });
               imageRevealed = true;
             } else if (newCycle !== 3 && imageRevealed) {
-              gsap.to(handImageRef.current, { 
-                opacity: 0, 
-                duration: 0.3 
+              gsap.to(handImageRef.current, {
+                opacity: 0,
+                duration: 0.3,
               });
               gsap.to(introCopyRef.current?.querySelectorAll("p") || [], {
                 x: 20,
@@ -97,15 +97,19 @@ export default function Home() {
           }
 
           // Handle height and opacity transitions
-          if (progress <= 6/8) {
-            const animationProgress = Math.max(0, (progress - 5/8) / (1/8));
-            const newHeight = gsap.utils.interpolate(52.75, 100, animationProgress);
+          if (progress <= 6 / 8) {
+            const animationProgress = Math.max(0, (progress - 5 / 8) / (1 / 8));
+            const newHeight = gsap.utils.interpolate(
+              52.75,
+              100,
+              animationProgress
+            );
             const newOpacity = gsap.utils.interpolate(1, 0, animationProgress);
-            
+
             gsap.set(handRef.current, { height: `${newHeight}%` });
             gsap.set(introRef.current, { opacity: 1 });
             gsap.set(h1ElementRef.current, { opacity: newOpacity });
-            
+
             const span = h1ElementRef.current?.querySelector("span");
             if (span) {
               gsap.set(span, { opacity: newOpacity });
@@ -113,8 +117,29 @@ export default function Home() {
           } else {
             gsap.set(introRef.current, { opacity: 0 });
           }
+
+          if (progress <= 7 / 8) {
+            const scaleProgress = Math.max(0, (progress - 6 / 8) / (1 / 8));
+            const newScale = gsap.utils.interpolate(1, 20, scaleProgress);
+            gsap.set(handRef.current, { scale: newScale });
+          }
+
+          if (progress <= 7.5 / 8) {
+            const opacityProgress = Math.max(0, (progress - 7 / 8) / (0.5 / 8));
+            const newOpacity = gsap.utils.interpolate(1, 0, opacityProgress);
+            gsap.set(handRef.current, { opacity: newOpacity });
+          }
+          if (progress > 7.5 / 8) {
+            const revealProgress = (progress - 7.5 / 8) / (0.5 / 8);
+            const newOpacity = gsap.utils.interpolate(0, 1, revealProgress);
+            gsap.set(websiteContentRef.current, { opacity: newOpacity });
+          } else {
+            gsap.set(websiteContentRef.current, { opacity: 0 });
+          }
         },
       });
+
+      updateHeaderText();
 
       return () => {
         trigger?.kill();
@@ -124,14 +149,14 @@ export default function Home() {
   );
 
   return (
-    <ReactLenis root>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
       <div className="container" ref={container}>
         <section className="sticky" ref={stickyRef}>
           <div className="hand-container" ref={handContainerRef}>
             <div className="hand" ref={handRef}>
-              <img 
-                src="/usage.jpg" 
-                alt="Hand" 
+              <img
+                src="/usage.jpg"
+                alt="Hand"
                 ref={handImageRef}
                 style={{ opacity: 0 }} // Initial state
               />
@@ -143,12 +168,14 @@ export default function Home() {
             </h1>
             <div ref={introCopyRef}>
               <p style={{ opacity: 0, transform: "translateX(20px)" }}>
-                lodep uhidzuedz hiuhdqb uyd gquy dgu dguy edg yugyguygeuygdus
-                ygdsu qhdiq
+                It is empathetic, anticipating the user's unspoken need, the
+                teammate's next challenge, the future's unasked question. I
+                build not just for today's merge, but for the legacy of what
+                could be. Because technology is not tools, it is the bridge
+                between what is and what we dare to imagine.
               </p>
               <p style={{ opacity: 0, transform: "translateX(20px)" }}>
-                lodep uhidzuedz hiuhdqb uyd gquy dgu dguy edg yugyguygeuygdus
-                ygdsu qhdiq
+                And so I debug, design, and dream, one line at a time.
               </p>
             </div>
           </div>
@@ -157,7 +184,7 @@ export default function Home() {
           </div>
         </section>
         <section className="about">
-          <p>Some text</p>
+          <p>Some content here</p>
         </section>
       </div>
     </ReactLenis>
